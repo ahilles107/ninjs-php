@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace AHS\Ninjs;
 
-class Symbol
+final class Symbol
 {
     /**
      * Ticker symbol used for the financial instrument.

@@ -4,6 +4,9 @@ declare(strict_types = 1);
 
 namespace AHS\Ninjs;
 
+use AHS\Ninjs\Schema\Associations;
+use AHS\Ninjs\Schema\Renditions;
+
 /**
  * A news item as JSON object -- copyright 2014 IPTC - International Press Telecommunications Council - www.iptc.org
  * This document is published under the Creative Commons Attribution 3.0 license
@@ -26,7 +29,7 @@ class Item
      *
      * @var string
      */
-    protected $type;
+    protected $type = 'text';
 
     /**
      * A text format description of the content of the item.
@@ -149,14 +152,14 @@ class Item
      *
      * @var Person[]
      */
-    protected $person = [];
+    protected $person;
 
     /**
      * An administrative and functional structure which may act as as a business, as a political party or not-for-profit party.
      *
      * @var Organization[]
      */
-    protected $organisation = [];
+    protected $organisation;
 
     /**
      * The name(s) of the creator(s) of the content.
@@ -185,58 +188,53 @@ class Item
      * @propertyPattern ^geometry_[a-zA-Z0-9_]+
      * @var Place[]
      */
-    protected $place = [];
+    protected $place;
 
     /**
      * A concept with a relationship to the content
      *
      * @var Subject[]
      */
-    protected $subject = [];
+    protected $subject;
 
     /**
      * Something which happens in a planned or unplanned manner.
      *
      * @var Event[]
      */
-    protected $event = [];
+    protected $event;
 
     /**
      * Something material, excluding persons.
      *
      * @var Object[]
      */
-    protected $object = [];
+    protected $object;
 
     /**
      * Wrapper for different renditions of non-textual content of the news object.
      *
      * @propertyPattern ^[a-zA-Z0-9]+
-     * @var Rendition[]
+     * @var Renditions
      */
-    protected $renditions = [];
+    protected $renditions;
 
     /**
      * Content of news objects which are associated with this news object.
      *
      * @propertyPattern ^[a-zA-Z0-9]+
-     * @var Item[]
+     * @var Associations
      */
-    protected $associations = [];
+    protected $associations;
 
     /**
      * Item constructor.
+     *
+     * @param string $uri
      */
-    public function __construct()
+    public function __construct(string $uri)
     {
-        $this->person = [];
-        $this->organisation = [];
-        $this->place = [];
-        $this->subject = [];
-        $this->event = [];
-        $this->object = [];
-        $this->renditions = [];
-        $this->associations = [];
+        $this->uri = $uri;
     }
 
     /**
@@ -530,7 +528,7 @@ class Item
     /**
      * @return Person[]
      */
-    public function getPerson(): array
+    public function getPerson()
     {
         return $this->person;
     }
@@ -546,7 +544,7 @@ class Item
     /**
      * @return Organization[]
      */
-    public function getOrganisation(): array
+    public function getOrganisation()
     {
         return $this->organisation;
     }
@@ -610,7 +608,7 @@ class Item
     /**
      * @return Place[]
      */
-    public function getPlace(): array
+    public function getPlace()
     {
         return $this->place;
     }
@@ -626,7 +624,7 @@ class Item
     /**
      * @return Subject[]
      */
-    public function getSubject(): array
+    public function getSubject()
     {
         return $this->subject;
     }
@@ -642,7 +640,7 @@ class Item
     /**
      * @return Event[]
      */
-    public function getEvent(): array
+    public function getEvent()
     {
         return $this->event;
     }
@@ -658,7 +656,7 @@ class Item
     /**
      * @return \Object[]
      */
-    public function getObject(): array
+    public function getObject()
     {
         return $this->object;
     }
@@ -672,25 +670,25 @@ class Item
     }
 
     /**
-     * @return Rendition[]
+     * @return null|Renditions
      */
-    public function getRenditions(): array
+    public function getRenditions()
     {
         return $this->renditions;
     }
 
     /**
-     * @param Rendition[] $renditions
+     * @param Renditions $renditions
      */
-    public function setRenditions(array $renditions)
+    public function setRenditions(Renditions $renditions)
     {
         $this->renditions = $renditions;
     }
 
     /**
-     * @return Item[]
+     * @return null|Associations
      */
-    public function getAssociations(): array
+    public function getAssociations()
     {
         return $this->associations;
     }

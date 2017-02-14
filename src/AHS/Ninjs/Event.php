@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace AHS\Ninjs;
 
-class Event
+final class Event
 {
     /**
      * The name of the event.

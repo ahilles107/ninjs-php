@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace AHS\Ninjs;
 
-class Object
+final class Object
 {
     /**
      * The name of the object.

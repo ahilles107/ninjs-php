@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace AHS\Ninjs;
 
-class Person
+final class Person
 {
     /**
      * The name of a person.

@@ -2,6 +2,11 @@
     "name": "ahs/ninjs-php",
     "description": "Serialize ninjs objects representation into json. Deserialize ninjs into objects",
     "type": "library",
+    "require": {
+        "symfony/serializer": "^3.2",
+        "symfony/property-access": "^3.2",
+        "swp/bridge": "^0.1.1"
+    },
     "require-dev": {
         "phpunit/phpunit": "^6.0"
     },
@@ -11,12 +16,16 @@
         },
         "exclude-from-classmap": [ "Tests/*" ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "AHS\\Ninjs\\Tests\\": "Tests/"
+        }
+    },
     "license": "AGPL-3",
     "authors": [
         {
             "name": "Paweł Mikołajczuk",
             "email": "mikolajczuk.private@gmail.com"
         }
-    ],
-    "require": {}
+    ]
 }

@@ -7,7 +7,7 @@ namespace AHS\Ninjs;
 /**
  * An object holding geo data of this place. Could be of any relevant geo data JSON object definition.
  */
-class Place
+final class Place
 {
     /**
      * The name of the place.

@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace AHS\Ninjs;
 
-class Organization
+final class Organization
 {
     /**
      * The name of the organisation.

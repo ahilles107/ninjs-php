@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace AHS\Ninjs;
 
-class Rendition
+final class Rendition
 {
     /**
      * The URL for accessing the rendition as a resource.
@@ -48,4 +48,110 @@ class Rendition
      * @var int
      */
     protected $sizeinbytes;
+
+    /**
+     * Rendition constructor.
+     *
+     * @param string $href
+     */
+    public function __construct(string $href)
+    {
+        $this->setHref($href);
+    }
+
+    /**
+     * @return string
+     */
+    public function getHref()
+    {
+        return $this->href;
+    }
+
+    /**
+     * @param string $href
+     */
+    public function setHref(string $href)
+    {
+        $this->href = $href;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMimetype()
+    {
+        return $this->mimetype;
+    }
+
+    /**
+     * @param string $mimetype
+     */
+    public function setMimetype(string $mimetype)
+    {
+        $this->mimetype = $mimetype;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle(string $title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return int
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param int $height
+     */
+    public function setHeight(int $height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param int $width
+     */
+    public function setWidth(int $width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSizeinbytes()
+    {
+        return $this->sizeinbytes;
+    }
+
+    /**
+     * @param int $sizeinbytes
+     */
+    public function setSizeinbytes(int $sizeinbytes)
+    {
+        $this->sizeinbytes = $sizeinbytes;
+    }
 }

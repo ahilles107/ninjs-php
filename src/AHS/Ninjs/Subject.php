@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace AHS\Ninjs;
 
-class Subject
+final class Subject
 {
     /**
      * The name of the subject.
