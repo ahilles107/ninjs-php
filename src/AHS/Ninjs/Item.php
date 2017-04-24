@@ -694,9 +694,9 @@ class Item
     }
 
     /**
-     * @param Item[] $associations
+     * @param null|Associations $associations
      */
-    public function setAssociations(array $associations)
+    public function setAssociations($associations)
     {
         $this->associations = $associations;
     }

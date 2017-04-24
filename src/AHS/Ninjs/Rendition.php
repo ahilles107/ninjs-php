@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace AHS\Ninjs;
 
-final class Rendition
+class Rendition
 {
     /**
      * The URL for accessing the rendition as a resource.
