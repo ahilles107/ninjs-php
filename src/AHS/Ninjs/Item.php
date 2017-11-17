@@ -185,7 +185,8 @@ class Item
     /**
      * A named location.
      *
-     * @propertyPattern ^geometry_[a-zA-Z0-9_]+
+     * propertyPattern ^geometry_[a-zA-Z0-9_]+
+     *
      * @var Place[]
      */
     protected $place;
@@ -214,7 +215,8 @@ class Item
     /**
      * Wrapper for different renditions of non-textual content of the news object.
      *
-     * @propertyPattern ^[a-zA-Z0-9]+
+     * propertyPattern ^[a-zA-Z0-9]+
+     *
      * @var Renditions
      */
     protected $renditions;
@@ -222,7 +224,8 @@ class Item
     /**
      * Content of news objects which are associated with this news object.
      *
-     * @propertyPattern ^[a-zA-Z0-9]+
+     * propertyPattern ^[a-zA-Z0-9]+
+     *
      * @var Associations
      */
     protected $associations;
