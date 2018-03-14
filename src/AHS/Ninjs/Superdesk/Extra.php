@@ -7,9 +7,9 @@
  */
 declare(strict_types=1);
 
-namespace AHS\Ninjs\Schema;
+namespace AHS\Ninjs\Superdesk;
 
-final class Renditions
+class Extra
 {
     private $items = [];
 

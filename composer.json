@@ -3,6 +3,7 @@
     "description": "Serialize ninjs objects representation into json. Deserialize ninjs into objects",
     "type": "library",
     "require": {
+        "php": ">=7.1",
         "symfony/serializer": "^3.2",
         "symfony/property-access": "^3.2",
         "swp/bridge": "^1.2"

@@ -1,6 +1,11 @@
 <?php
-
-declare(strict_types = 1);
+/**
+ * Copyright (C) Paweł Mikołajczuk Creative Apps - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Paweł Mikołajczuk <pawel@mikolajczuk.in>, 2018.
+ */
+declare(strict_types=1);
 
 namespace AHS\Ninjs;
 
@@ -401,7 +406,7 @@ class Item
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
     public function getVersioncreated()
     {
@@ -413,7 +418,8 @@ class Item
      */
     public function setVersioncreated(\DateTime $versioncreated)
     {
-        $this->versioncreated = $versioncreated;
+        $versioncreated->setTimeZone(new \DateTimeZone('UTC'));
+        $this->versioncreated = $versioncreated->format(\DateTime::ISO8601);
     }
 
     /**
