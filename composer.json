@@ -22,7 +22,7 @@
             "AHS\\Ninjs\\Tests\\": "Tests/"
         }
     },
-    "license": "AGPL-3",
+    "license": "AGPL-3.0",
     "authors": [
         {
             "name": "Paweł Mikołajczuk",
