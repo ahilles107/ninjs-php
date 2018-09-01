@@ -41,7 +41,7 @@ class Item extends BaseItem
     /**
      * @var array
      */
-    protected $authors = [];
+    protected $authors;
 
     /**
      * @var Extra
@@ -55,6 +55,8 @@ class Item extends BaseItem
     {
         parent::__construct($uri);
 
+        $this->uri = null;
+        $this->setLanguage('en');
         $this->guid = $uri;
     }
 
@@ -133,8 +135,9 @@ class Item extends BaseItem
     /**
      * @return array
      */
-    public function getAuthors(): array
+    public function getAuthors(): ?array
     {
+
         return $this->authors;
     }
 
@@ -143,6 +146,10 @@ class Item extends BaseItem
      */
     public function addAuthor(Author $author)
     {
+        if (null === $this->authors) {
+            $this->authors = [];
+        }
+
         $this->authors[] = $author;
     }
 

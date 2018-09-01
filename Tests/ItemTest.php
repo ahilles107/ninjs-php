@@ -8,7 +8,7 @@
 
 namespace AHS\Ninjs\Tests;
 
-use AHS\Ninjs\Item;
+use AHS\Ninjs\Superdesk\Item;
 
 
 class ItemTest extends BaseTestCase
@@ -19,33 +19,33 @@ class ItemTest extends BaseTestCase
         self::assertInstanceOf(Item::class, $item);
 
         $serializedItem = $this->getSerializer()->serialize($item, 'json');
-        self::assertEquals('{"uri":"https:\/\/ninjs.ahs\/item","type":"text"}', $serializedItem);
+        self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"text","language":"en"}', $serializedItem);
         self::assertTrue($this->getValidator()->isValid($serializedItem));
     }
 
     public function testTypes()
     {
         $item = new Item('https://ninjs.ahs/item');
-        self::assertEquals('{"uri":"https:\/\/ninjs.ahs\/item","type":"text"}', $this->getSerializer()->serialize($item, 'json'));
+        self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"text","language":"en"}', $this->getSerializer()->serialize($item, 'json'));
 
         $item->setType('picture');
-        self::assertEquals('{"uri":"https:\/\/ninjs.ahs\/item","type":"picture"}', $this->getSerializer()->serialize($item, 'json'));
+        self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"picture","language":"en"}', $this->getSerializer()->serialize($item, 'json'));
 
 
         $item->setType('audio');
-        self::assertEquals('{"uri":"https:\/\/ninjs.ahs\/item","type":"audio"}', $this->getSerializer()->serialize($item, 'json'));
+        self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"audio","language":"en"}', $this->getSerializer()->serialize($item, 'json'));
 
 
         $item->setType('video');
-        self::assertEquals('{"uri":"https:\/\/ninjs.ahs\/item","type":"video"}', $this->getSerializer()->serialize($item, 'json'));
+        self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"video","language":"en"}', $this->getSerializer()->serialize($item, 'json'));
 
 
         $item->setType('graphic');
-        self::assertEquals('{"uri":"https:\/\/ninjs.ahs\/item","type":"graphic"}', $this->getSerializer()->serialize($item, 'json'));
+        self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"graphic","language":"en"}', $this->getSerializer()->serialize($item, 'json'));
 
 
         $item->setType('composite');
-        self::assertEquals('{"uri":"https:\/\/ninjs.ahs\/item","type":"composite"}', $this->getSerializer()->serialize($item, 'json'));
+        self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"composite","language":"en"}', $this->getSerializer()->serialize($item, 'json'));
     }
 
     public function testBasicTextItem()
@@ -55,7 +55,7 @@ class ItemTest extends BaseTestCase
         $item->setBodyHtml('<h1>Simple Title</h1> <p>Simple text paragraph</p>');
         $item->setBodyText(strip_tags($item->getBodyHtml()));
 
-        self::assertEquals('{"uri":"https:\/\/ninjs.ahs\/item","type":"text","body_text":"Simple Title Simple text paragraph","body_html":"<h1>Simple Title<\/h1> <p>Simple text paragraph<\/p>","byline":"Pawe\u0142 Miko\u0142ajczuk"}', $this->getSerializer()->serialize($item, 'json'));
+        self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"text","body_text":"Simple Title Simple text paragraph","body_html":"<h1>Simple Title<\/h1> <p>Simple text paragraph<\/p>","language":"en","byline":"Pawe\u0142 Miko\u0142ajczuk"}', $this->getSerializer()->serialize($item, 'json'));
         self::assertTrue($this->getValidator()->isValid($this->getSerializer()->serialize($item, 'json')));
     }
 }
