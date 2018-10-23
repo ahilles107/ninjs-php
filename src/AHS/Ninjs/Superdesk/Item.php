@@ -49,6 +49,11 @@ class Item extends BaseItem
     protected $extra;
 
     /**
+     * @var array
+     */
+    protected $keywords = [];
+
+    /**
      * {@inheritdoc}
      */
     public function __construct($uri)
@@ -175,5 +180,15 @@ class Item extends BaseItem
     public function setExtra(Extra $extra): void
     {
         $this->extra = $extra;
+    }
+
+    public function getKeywords(): array
+    {
+        return $this->keywords;
+    }
+
+    public function setKeywords(array $keywords): void
+    {
+        $this->keywords = $keywords;
     }
 }
