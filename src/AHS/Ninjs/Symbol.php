@@ -16,14 +16,14 @@ final class Symbol
      *
      * @var string
      */
-    protected $ticker;
+    private $ticker;
 
     /**
      * Identifier for the marketplace which uses the ticker symbols of the ticker property.
      *
      * @var string
      */
-    protected $exchange;
+    private $exchange;
 
     /**
      * @return string

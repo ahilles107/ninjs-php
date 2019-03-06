@@ -15,11 +15,10 @@ use AHS\Ninjs\Schema\Renditions;
 /**
  * A news item as JSON object -- copyright 2014 IPTC - International Press Telecommunications Council - www.iptc.org
  * This document is published under the Creative Commons Attribution 3.0 license
- * see  http://creativecommons.org/licenses/by/3.0/
+ * see  http://creativecommons.org/licenses/by/3.0/.
  */
 class Item
 {
-
     /**
      * The identifier for this news object.
      *
@@ -51,14 +50,14 @@ class Item
     protected $description_html;
 
     /**
-     * A text format body of item
+     * A text format body of item.
      *
      * @var string
      */
     protected $body_text;
 
     /**
-     * A html format body of item
+     * A html format body of item.
      *
      * @var string
      */
@@ -197,7 +196,7 @@ class Item
     protected $place;
 
     /**
-     * A concept with a relationship to the content
+     * A concept with a relationship to the content.
      *
      * @var Subject[]
      */
@@ -213,7 +212,7 @@ class Item
     /**
      * Something material, excluding persons.
      *
-     * @var Object[]
+     * @var object[]
      */
     protected $object;
 

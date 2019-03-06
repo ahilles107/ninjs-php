@@ -16,26 +16,26 @@ final class Object
      *
      * @var string
      */
-    protected $name;
+    private $name;
 
     /**
      * The relationship of the content of the news object to the object.
      *
      * @var string
      */
-    protected $rel;
+    private $rel;
 
     /**
      * The identifier of a scheme (= controlled vocabulary) which includes a code for the object.
      *
      * @var string
      */
-    protected $scheme;
+    private $scheme;
 
     /**
      * The code for the object in a scheme (= controlled vocabulary) which is identified by the scheme property.
      *
      * @var string
      */
-    protected $code;
+    private $code;
 }

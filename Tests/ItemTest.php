@@ -10,7 +10,6 @@ namespace AHS\Ninjs\Tests;
 
 use AHS\Ninjs\Superdesk\Item;
 
-
 class ItemTest extends BaseTestCase
 {
     public function testInitialization()
@@ -31,18 +30,14 @@ class ItemTest extends BaseTestCase
         $item->setType('picture');
         self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"picture","language":"en"}', $this->getSerializer()->serialize($item, 'json'));
 
-
         $item->setType('audio');
         self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"audio","language":"en"}', $this->getSerializer()->serialize($item, 'json'));
-
 
         $item->setType('video');
         self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"video","language":"en"}', $this->getSerializer()->serialize($item, 'json'));
 
-
         $item->setType('graphic');
         self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"graphic","language":"en"}', $this->getSerializer()->serialize($item, 'json'));
-
 
         $item->setType('composite');
         self::assertEquals('{"guid":"https:\/\/ninjs.ahs\/item","type":"composite","language":"en"}', $this->getSerializer()->serialize($item, 'json'));

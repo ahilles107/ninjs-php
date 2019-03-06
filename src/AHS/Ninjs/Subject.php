@@ -16,28 +16,28 @@ final class Subject
      *
      * @var string
      */
-    protected $name;
+    private $name;
 
     /**
      * The relationship of the content of the news object to the subject.
      *
      * @var string
      */
-    protected $rel;
+    private $rel;
 
     /**
      * The identifier of a scheme (= controlled vocabulary) which includes a code for the subject.
      *
      * @var string
      */
-    protected $scheme;
+    private $scheme;
 
     /**
      * The code for the subject in a scheme (= controlled vocabulary) which is identified by the scheme property.
      *
      * @var string
      */
-    protected $code;
+    private $code;
 
     /**
      * @return string

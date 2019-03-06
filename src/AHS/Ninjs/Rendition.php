@@ -13,6 +13,7 @@ class Rendition
 {
     /**
      * The URL for accessing the rendition as a resource.
+     *
      * @var string
      */
     protected $href;

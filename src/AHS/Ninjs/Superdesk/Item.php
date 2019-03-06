@@ -142,7 +142,6 @@ class Item extends BaseItem
      */
     public function getAuthors(): ?array
     {
-
         return $this->authors;
     }
 

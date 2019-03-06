@@ -6,6 +6,7 @@
  * Written by Paweł Mikołajczuk <pawel@mikolajczuk.in>, 2018.
  */
 declare(strict_types=1);
+
 namespace AHS\Ninjs;
 
 final class Organization
@@ -15,35 +16,35 @@ final class Organization
      *
      * @var string
      */
-    protected $name;
+    private $name;
 
     /**
      * The relationship of the content of the news object to the organisation.
      *
      * @var string
      */
-    protected $rel;
+    private $rel;
 
     /**
      * The identifier of a scheme (= controlled vocabulary) which includes a code for the organisation.
      *
      * @var string
      */
-    protected $scheme;
+    private $scheme;
 
     /**
      * The code for the organisation in a scheme (= controlled vocabulary) which is identified by the scheme property.
      *
      * @var string
      */
-    protected $code;
+    private $code;
 
     /**
      * Symbols used for a finanical instrument linked to the organisation at a specific market place.
      *
      * @var Symbol[]
      */
-    protected $symbols;
+    private $symbols;
 
     /**
      * @return string
