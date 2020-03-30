@@ -4,8 +4,8 @@
     "type": "library",
     "require": {
         "php": ">=7.1",
-        "symfony/serializer": "^3.2|^4.1",
-        "symfony/property-access": "^3.2|^4.1",
+        "symfony/serializer": "^3.2|^4.1|^5.0",
+        "symfony/property-access": "^3.2|^4.1|^5.0",
         "swp/bridge": "^1.4|^2.0"
     },
     "require-dev": {
