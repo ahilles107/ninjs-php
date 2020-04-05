@@ -14,8 +14,9 @@ use Psr\Log\NullLogger;
 use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use PHPUnit\Framework\TestCase;
 
-class BaseTestCase extends \PHPUnit\Framework\TestCase
+class BaseTestCase extends TestCase
 {
     public function getSerializer()
     {
